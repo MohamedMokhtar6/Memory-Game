@@ -4,7 +4,15 @@ document.querySelector(".start span").onclick=function(){
         document.querySelector(".info .name span").innerHTML="Unknown";
 
     }else document.querySelector(".info .name span").innerHTML=name;  
-    document.querySelector(".start").remove();  
+    document.querySelector(".start").remove(); 
+    blocks.forEach(block=>{
+        block.classList.add("isflap")
+        stopclick();
+        setTimeout(()=>{
+            block.classList.remove("isflap")
+
+        },2000)
+    }) 
 };
 let duration=1000;
 let blockcont=document.querySelector(".game-block");
